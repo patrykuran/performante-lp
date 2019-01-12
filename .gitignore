@@ -2,7 +2,6 @@
 bower_components
 node_modules/
 npm-debug.log
-css
 gulpfile.js
 config.json
 package-lock.json
