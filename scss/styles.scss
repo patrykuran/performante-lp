@@ -44,6 +44,7 @@ $salmon-color: #ff6563;
   background-repeat: no-repeat;
   background-size: 100%;
   background-position: top;
+
   .hero-content-wrapper {
     min-height: 100vh;
     position: relative;
@@ -138,6 +139,26 @@ $salmon-color: #ff6563;
     }
   }
 
+  /* MOBILE horizontal
+  ----------------------------------------------------- */
+  @media (max-width: 570px) and (orientation: landscape) {
+    .hero-content-wrapper {
+      min-height: 250vh;
+      .btn-wrapper {
+        bottom: 45%;
+      }
+    }
+  }
+
+  @media (min-width: 571px) and (max-width: 820px) and (orientation: landscape) {
+    .hero-content-wrapper {
+      min-height: 250vh;
+      .btn-wrapper {
+        bottom: 2%;
+      }
+    }
+  }
+
   /* TABLETS horizontal
   ----------------------------------------------------- */
 
@@ -171,7 +192,7 @@ $salmon-color: #ff6563;
   /* XLARGE DISPLAYS
   ----------------------------------------------------- */
 
-  @include breakpoint(xlarge) {
+  @media screen and (min-width: 1200px) {
     background-image: url("../images/hero-background-xlarge.png");
     background-size: cover;
     .hero-content-wrapper {
@@ -300,6 +321,18 @@ $salmon-color: #ff6563;
     margin: 60% auto 35%;
   }
 
+  /* MOBILE horizontal
+  ----------------------------------------------------- */
+  @media print,
+    screen and (min-width: 571px) and (max-width: 820px) and (orientation: landscape) {
+    .tile {
+      &.tile-2,
+      &.tile-3 {
+        position: static !important;
+      }
+    }
+  }
+
   /* TABLETS VERTICAL
   ----------------------------------------------------- */
 
@@ -375,21 +408,22 @@ $salmon-color: #ff6563;
     }
 
     .logo-jelonki-bottom {
-      margin: 5% auto 30%;
-      width: 20%;
+      &.logo-big {
+        margin: 5% auto 30%;
+      }
     }
   }
 
   /* XLARGE DISPLAYS
   ----------------------------------------------------- */
-  @include breakpoint(xlarge) {
+  @media screen and (min-width: 1200px) {
     background-image: url("../images/bottom-background-xlarge.png");
     background-size: cover;
   }
 
   /* XXLARGE DISPLAYS
   ----------------------------------------------------- */
-  @include breakpoint(xxlarge) {
+  @media screen and (min-width: 1440px) {
     .main-header {
       margin: 70px 0 25px;
       font-size: 36px;
@@ -421,8 +455,9 @@ $salmon-color: #ff6563;
   }
 
   .logo-jelonki-bottom {
-    margin: 5% auto 25%;
-    width: 15%;
+    &.logo-big {
+      margin: 5% auto 25%;
+    }
   }
 }
 
