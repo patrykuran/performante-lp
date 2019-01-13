@@ -26,7 +26,8 @@
               <span class="show-for-sr">Przejdź do sekcji</span>
             </a>
           </div>
-          <a class="btn-scroll-down scroll-medium show-for-medium" href="#main-section">
+          <button class="modal-open" data-open="popup">Poznaj zwierzaki</button>
+          <a class="btn-scroll-down scroll-medium show-for-medium" href="#main-section" data-smooth-scroll>
             <span class="show-for-sr">Przejdź do sekcji</span>
           </a>
         </div>
@@ -90,8 +91,57 @@
 
     <a href="https://performante.com/"><img class="show-for-medium" src="images/performante_logotype_medium.png" alt="Logotyp Performante"></a>
     <img class="show-for-medium" src="images/x_medium.png" alt="">
-    <a href="http://osrodekjelonki.pl/"><img class="show-for-medium" src="images/osrodek-jelonki-logotype_medium.png" alt="Logotyp Ośrodka Jelonki"></a>
+    <a href="http://osrodekjelonki.pl/"><img class="show-for-medium" src="images/osrodek-jelonki-logotype_medium.png"
+        alt="Logotyp Ośrodka Jelonki"></a>
   </footer>
+
+
+  <!-- MODAL -->
+
+  <div class="full reveal custom-popup" id="popup" aria-labelledby="popup" data-animation-in="fade-in fast" data-animation-out="fade-out fast" data-reveal>
+    <div class="modal-inner text-center">
+      <h2 id="popup" class="popup-title">Poznaj niektórych mieszkańców:</h2>
+      <button class="close-button close-btn-custom" data-close aria-label="Zakmnij modal" type="button">
+        <span aria-hidden="true">WRÓĆ DO STRONY</span>
+      </button>
+      <div class="grid-x align-center grid-padding-x">
+        <div class="cell shrink">
+          <div class="popup-tile">
+            <div class="video-container">
+              <a href=""><img class="" src="images/red-play.png" alt=""></a>
+            </div>
+            <div class="title-container">
+              <h3 class="video-title">Myszołów Cyprian</h3>
+              <p class='video-subtitle'>mówi że zna się z Sokołem</p>
+            </div>
+          </div>
+        </div>
+        <div class="cell shrink">
+          <div class="popup-tile">
+            <div class="video-container">
+              <img class="" src="images/red-play.png" alt="">
+            </div>
+            <div class="title-container">
+              <h3 class="video-title">Koń Leszek</h3>
+              <p class='video-subtitle'>mówi że zna się z Sokołem</p>
+            </div>
+          </div>
+        </div>
+        <div class="cell shrink">
+          <div class="popup-tile">
+            <div class="video-container">
+              <img class="" src="images/red-play.png" alt="">
+            </div>
+            <div class="title-container">
+              <h3 class="video-title">Kuna Lesia</h3>
+              <p class='video-subtitle'>mówi że zna się z Sokołem</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
 
   <script src="node_modules/jquery/dist/jquery.js"></script>
   <script src="node_modules/what-input/dist/what-input.js"></script>
