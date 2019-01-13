@@ -1,0 +1,538 @@
+/* Fonts
+-------------------------------------------------------------------------
+------------------------------------------------------------------------*/
+
+@font-face {
+  font-family: adelleRegular;
+  src: url("../fonts/Adelle_Reg.otf") format("opentype");
+}
+
+@font-face {
+  font-family: adelleBold;
+  src: url("../fonts/Adelle_Bold.otf") format("opentype");
+}
+
+/* Variables
+-------------------------------------------------------------------------
+------------------------------------------------------------------------*/
+
+$adelle-regular: adelleRegular, Arial, sans-serif;
+$adelle-bold: adelleBold, Arial Bold, sans-serif;
+$orange-text: #f5a623;
+$salmon-color: #ff6563;
+
+@keyframes up-down {
+  0% {
+    bottom: 5%;
+  }
+  100% {
+    bottom: 6%;
+  }
+}
+
+/* Styles
+-------------------------------------------------------------------------
+------------------------------------------------------------------------*/
+
+/* HERO SECTION
+------------------------------------------------------------------------*/
+
+.hero-section {
+  text-align: center;
+  color: #fff;
+  background-image: url("../images/hero-background-mobile.png");
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-position: top;
+  .hero-content-wrapper {
+    min-height: 100vh;
+    position: relative;
+    .logo-jelonki {
+      margin: 35px auto 15px;
+    }
+    .title {
+      font-size: 14px;
+      font-family: $adelle-bold;
+    }
+    .btn-wrapper {
+      position: absolute;
+      bottom: 2%;
+      left: 0;
+      right: 0;
+      .btn {
+        min-width: 115px;
+        height: 50px;
+        border-radius: 30px;
+        text-transform: uppercase;
+        font-size: 13px;
+        font-family: $adelle-bold;
+        margin: 5px;
+        padding: 0 15px;
+        transition: all 0.2s ease-in-out;
+        &.btn-support {
+          background-color: $salmon-color;
+        }
+        &.btn-share {
+          background-color: #f5a623;
+        }
+        a {
+          color: #fff;
+          text-decoration: none;
+          vertical-align: text-bottom;
+        }
+
+        &:hover {
+          transform: scale(1.1);
+          cursor: pointer;
+        }
+      }
+    }
+    .btn-scroll-down {
+      background-image: url("../images/scrolldown.png");
+      background-repeat: no-repeat;
+      background-size: cover;
+      width: 55px;
+      height: 55px;
+      display: block;
+      margin: 5px auto 0;
+      transition: all 0.2s ease-in-out;
+    }
+    @media screen and (max-width: 1399px) {
+      .modal-open {
+        display: none;
+      }
+    }
+  }
+
+  /* TABLETS VERTICAL
+  ----------------------------------------------------- */
+
+  @include breakpoint(medium) {
+    background-image: url("../images/hero-background-medium.png");
+    .hero-content-wrapper {
+      .logo-jelonki {
+        margin: 70px auto 15px;
+      }
+      .title {
+        font-size: 20px;
+        margin-top: 30px;
+      }
+      .btn-wrapper {
+        position: static;
+        margin: 25px auto;
+        .btn {
+          padding: 0 20px;
+        }
+      }
+
+      .scroll-medium {
+        position: absolute;
+        bottom: 10%;
+        left: 0;
+        right: 0;
+        width: 70px;
+        height: 70px;
+        cursor: pointer;
+        animation: up-down 1.2s alternate infinite linear;
+      }
+    }
+  }
+
+  /* TABLETS horizontal
+  ----------------------------------------------------- */
+
+  @include breakpoint(large) {
+    background-image: url("../images/hero-background-large.png");
+    .hero-content-wrapper {
+      .logo-jelonki {
+        margin: 35px auto 15px;
+      }
+      .title {
+        font-size: 16px;
+        margin-top: 10px;
+      }
+
+      .logo-jelonki {
+        width: 25%;
+      }
+
+      .btn-wrapper {
+        margin: 15px auto;
+      }
+
+      .scroll-medium {
+        width: 55px;
+        height: 55px;
+        bottom: 15%;
+      }
+    }
+  }
+
+  /* XLARGE DISPLAYS
+  ----------------------------------------------------- */
+
+  @include breakpoint(xlarge) {
+    background-image: url("../images/hero-background-xlarge.png");
+    background-size: cover;
+    .hero-content-wrapper {
+      .logo-jelonki {
+        max-width: 250px;
+        margin: 45px auto 30px;
+      }
+
+      .scroll-medium {
+        width: 65px;
+        height: 65px;
+        bottom: 5%;
+      }
+    }
+  }
+
+  /* XXLARGE DISPLAYS
+  ----------------------------------------------------- */
+  @media screen and (min-width: 1440px) {
+    .modal-open {
+      display: block;
+      position: absolute;
+      bottom: 5%;
+      right: 15%;
+      width: 285px;
+      height: 60px;
+      border-radius: 35px;
+      border: 2px solid $orange-text;
+      background-color: #fff;
+      cursor: pointer;
+      font-size: 15px;
+      font-family: $adelle-bold;
+      text-transform: uppercase;
+      color: $orange-text;
+      line-height: 35px;
+      text-align: center;
+      transition: all 0.2s ease-in-out;
+
+      img {
+        float: right;
+        margin-right: 15px;
+      }
+
+      &:hover {
+        transform: scale(1.1);
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+/* MAIN SECTION
+------------------------------------------------------------------------*/
+
+.main-section {
+  text-align: center;
+  background-image: url("../images/bottom-background-mobile.png");
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-position: center bottom;
+
+  .main-header {
+    font-family: $adelle-regular;
+    font-size: 14px;
+    margin: 50px 0 25px;
+  }
+
+  .tile {
+    width: 220px;
+    min-height: 240px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 5px 25px #e5e6ed;
+    border-radius: 12px;
+    margin: 15px auto;
+    padding: 20px 10px;
+    background-color: #fff;
+
+    .sum {
+      color: $orange-text;
+      font-family: $adelle-regular;
+      font-size: 32px;
+      margin-top: 15px;
+    }
+
+    .goal {
+      font-family: $adelle-regular;
+      font-size: 12px;
+    }
+  }
+
+  .encourage-wrapper {
+    max-width: 230px;
+    margin: 45px auto;
+
+    .encourage {
+      color: #fff;
+      font-family: $adelle-bold;
+      font-size: 14px;
+    }
+  }
+
+  .btn-bottom {
+    min-width: 300px;
+    min-height: 35px;
+    border-radius: 18px;
+    background-color: #fff;
+    margin: 8px auto;
+    transition: all 0.2s ease-in-out;
+    a {
+      color: $orange-text;
+      text-transform: uppercase;
+      font-size: 13px;
+      font-family: $adelle-bold;
+    }
+
+    &:hover {
+      transform: scale(1.1);
+      cursor: pointer;
+    }
+  }
+
+  .logo-jelonki-bottom {
+    margin: 60% auto 35%;
+  }
+
+  /* TABLETS VERTICAL
+  ----------------------------------------------------- */
+
+  @include breakpoint(medium) {
+    background-image: url("../images/bottom-background-medium.png");
+    .main-header {
+      font-size: 26px;
+      margin: 0 0 25px;
+    }
+
+    .tile {
+      &.tile-2,
+      &.tile-3 {
+        position: relative;
+      }
+      &.tile-2 {
+        top: 60px;
+      }
+      &.tile-3 {
+        top: 25px;
+      }
+    }
+
+    .encourage-wrapper {
+      max-width: 100%;
+      margin: 120px auto 60px;
+      .encourage {
+        font-size: 18px;
+      }
+    }
+
+    .btn-bottom {
+      min-width: 200px;
+      min-height: 45px;
+      padding: 15px 25px;
+      border-radius: 22px;
+    }
+
+    .logo-jelonki-bottom {
+      margin: 20% auto;
+    }
+  }
+
+  /* TABLETS horizontal
+  ----------------------------------------------------- */
+
+  @include breakpoint(large) {
+    background-image: url("../images/bottom-background-large.png");
+
+    .tile {
+      min-width: 280px;
+      min-height: 260px;
+
+      &.tile-2 {
+        top: 35px;
+      }
+
+      &.tile-3 {
+        top: 5px;
+      }
+
+      .tile-img {
+        max-width: 95px;
+      }
+
+      .sum {
+        font-size: 42px;
+      }
+    }
+
+    .encourage-wrapper {
+      margin: 65px auto 35px;
+    }
+
+    .logo-jelonki-bottom {
+      margin: 5% auto 30%;
+      width: 20%;
+    }
+  }
+
+  /* XLARGE DISPLAYS
+  ----------------------------------------------------- */
+  @include breakpoint(xlarge) {
+    background-image: url("../images/bottom-background-xlarge.png");
+    background-size: cover;
+  }
+
+  /* XXLARGE DISPLAYS
+  ----------------------------------------------------- */
+  @include breakpoint(xxlarge) {
+    .main-header {
+      margin: 70px 0 25px;
+      font-size: 36px;
+    }
+
+    .tile {
+      min-width: 420px;
+      min-height: 360px;
+
+      .tile-img {
+        max-width: 165px;
+      }
+
+      .sum {
+        font-size: 58px;
+      }
+
+      .goal {
+        font-size: 18px;
+      }
+    }
+
+    .btn-bottom {
+      min-width: 225px;
+      min-height: 60px;
+      border-radius: 30px;
+      padding: 15px 40px;
+    }
+  }
+
+  .logo-jelonki-bottom {
+    margin: 5% auto 25%;
+    width: 15%;
+  }
+}
+
+/* FOOTER SECTION
+------------------------------------------------------------------------*/
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+
+  /* TABLETS VERTICAL
+  ----------------------------------------------------- */
+
+  @include breakpoint(medium) {
+    justify-content: center;
+    padding: 5px 0 50px;
+    img {
+      margin: 0 20px;
+    }
+  }
+
+  /* TABLETS horizontal
+  ----------------------------------------------------- */
+
+  @include breakpoint(large) {
+    img {
+      margin: 0 15px;
+    }
+  }
+}
+
+/* MODAL
+  ----------------------------------------------------- */
+.custom-popup {
+  background-color: transparent;
+  background-image: linear-gradient(179deg, transparent 0%, #fff 40%);
+
+  .modal-inner {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 60%;
+    max-width: 1400px;
+    margin: 0 auto;
+
+    .popup-title {
+      font-size: 36px;
+      font-family: $adelle-regular;
+      margin-bottom: 50px;
+    }
+
+    .popup-tile {
+      width: 420px;
+      height: 340px;
+      border-radius: 20px;
+      box-shadow: 0 10px 45px #e5e6ed;
+      transition: all 0.3s ease-in-out;
+
+      .video-container {
+        border-radius: 20px 20px 0 0;
+        background-color: $salmon-color;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 65%;
+      }
+      .title-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 35%;
+        .video-title {
+          font-size: 24px;
+          font-family: $adelle-bold;
+          margin: 0;
+        }
+        .video-subtitle {
+          font-size: 18px;
+          font-family: $adelle-regular;
+          margin: 0;
+        }
+      }
+
+      &:hover {
+        transform: scale(1.05);
+        cursor: pointer;
+      }
+    }
+
+    .close-btn-custom {
+      position: absolute;
+      top: 0;
+      width: 200px;
+      height: 60px;
+      border-radius: 31px;
+      background-color: $salmon-color;
+      margin-right: 25px;
+      font-size: 14px;
+      color: #fff;
+      font-family: $adelle-bold;
+      transition: all 0.2s ease-in-out;
+
+      &:hover {
+        transform: scale(1.1);
+        cursor: pointer;
+      }
+    }
+  }
+}

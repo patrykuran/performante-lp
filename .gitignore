@@ -6,7 +6,6 @@ gulpfile.js
 config.json
 package-lock.json
 package.json
-scss/
 yarn.lock
 README.md
 CHANGELOG.md
